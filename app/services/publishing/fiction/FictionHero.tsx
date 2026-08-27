@@ -18,10 +18,10 @@ const FictionHero = () => {
 						<p className='mt-4 max-w-lg text-sm text-on-secondary-container'>We construct digital and physical reading experiences with rigorous attention to structural layout, typographic rhythm, and compelling cover aesthetics for authors and enterprise publishers.</p>
 
 						<div className='mt-8 flex flex-row gap-3 items-center justify-start'>
-							<button className='px-4 py-2 shimmer-btn text-white bg-on-secondary-container'>
+							<button className='px-4 py-2 shimmer-btn text-white bg-on-secondary-container cursor-pointer'>
 								Get a Publishing Quote
 							</button>
-							<button className='bg-white border border-on-secondary-container/40 px-4 py-2'>View Case Studies</button>
+							<button className='bg-white border border-on-secondary-container/40 px-4 py-2 cursor-pointer'>Start a Project</button>
 						</div>
 					</div>
 

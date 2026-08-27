@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from "next/link";
-import Image from "next/image";
 
 const FEATURED_CARD = [
 	{img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ym_xY3y9W4WoaePIr7WnbSHJxR_6xls7qbiFdlwCDeRz7XXVp9_BSg4MRTJiyoBwsUFKA32Bx1KMLK5WeivVKWh9g2ksjepre5uAgo-XnitFsHRXnmtLbJJksIDlRcatWeinp9--yLDAh7UOMG86a6T-2RcIc91-kH0o2UwP_RnwiIEeejqiBmcJBuaTrHdOyiux_jM5kUGiHumOszIuy1UsoeSr-tHi6a4L7FpIIVlOtK6IveAuTQ", title: "Global Market Analysis", sub: "Economics / Data Visualization"},

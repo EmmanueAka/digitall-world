@@ -30,3 +30,23 @@ export const WHY_CARD = [
 	{icon: EyeIcon, title: "Strategic Vision", Desc: "Design that serves business objectives, driving conversion through clarity and user-centric logic."},
 	{icon: ShieldIcon, title: "Enterprise Reliability", Desc: "Rigorous testing and robust infrastructure ensuring your platforms perform flawlessly under pressure."}
 ]
+
+export const ENTERPRISE_CARD = [
+	{icon: "corporate_fare", title: "Global Brand Management", des: "Ensuring consistent brand messaging and visual identity across all global digital touchpoints, solidifying market position."},
+	{icon: "finance", title: "Investor Relations Portals", des: "Secure, real-time data integration and robust financial reporting interfaces designed for clarity and stakeholder confidence."},
+	{icon: "group", title: "Stakeholder Engagement Hubs", des: "Tailored user journeys that address the specific needs of partners, employees, and board members with precision."}
+]
+
+export const DESIGN_METHOD_CARDS = [
+	{icon: "architecture", title: "Scalable Architecture", desc: "Engineered for growth, our systems adapt seamlessly to expanding corporate structures and complex integration requirements."},
+	{icon: "security", title: "Security & Compliance", desc: "Rigorous adherence to global security protocols and data privacy regulations, ensuring your enterprise assets remain protected."},
+	{icon: "speed", title: "Performance Optimization", desc: "Precision-tuned digital experiences that deliver lightning-fast load times and uncompromised stability under high traffic demands."},
+
+]
+
+export const FEATURED_CORPORATE_CARD = [
+	{icon: "business", title: "Financial Sector", sub: "Global Banking Portal", desc: "A unified digital experience serving millions of enterprise banking clients worldwide."},
+	{icon: "precision_manufacturing", title: "Manufacturing", sub: "Supply Chain Logistics", desc: "Robust data visualization and management tools for complex international logistics operations." },
+	{icon: "domain", title: "Real Estate", sub: "Commercial Portfolio", desc: "Immersive investor relations platform showcasing premium international properties."},
+
+]

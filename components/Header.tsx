@@ -3,8 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from "next/link";
 import InteractiveLogo from "@/components/InteractiveLogo";
+import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function Header({ onNavigationAction }: { onNavigationAction: () => void }) {
 	const [dropdownOpen, setDropdownOpen] = useState<boolean>(false)
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
 	const [activeMobileSection, setActiveMobileSection] = useState<string | null>(null)
@@ -12,6 +13,9 @@ export default function Header() {
 	const [isVisible, setIsVisible] = useState<boolean>(true)
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 	const lastScrollY = useRef<number>(0)
+
+	// Fetch current router location to compare active link states
+	const pathname = usePathname()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -45,6 +49,14 @@ export default function Header() {
 		setActiveMobileSection(activeMobileSection === section ? null : section)
 	}
 
+	// Dynamic style generator helper function for reuse across desk and mobile components
+	const getLinkStyles = (href: string) => {
+		const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
+		return `relative text-sm inline-block font-bold pb-1 transition-all duration-200 
+			after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#e2881c] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full 
+			${isActive ? 'text-[#e2881c] after:w-full' : 'text-black hover:text-[#e2881c] after:w-0'}`
+	}
+
 	return (
 		<>
 			<header
@@ -70,12 +82,12 @@ export default function Header() {
 						</div>
 					</div>
 					{/* DESKTOP NAVIGATION */}
-					<nav className='hidden md:flex items-center gap-8 font-bold flex-row text-sm text-black'>
+					<nav onClick={onNavigationAction} className="hidden md:flex items-center gap-8 font-bold flex-row text-sm text-black">
 						<div className='relative'
 						     onMouseEnter={() => setDropdownOpen(true)}
 						     onMouseLeave={() => setDropdownOpen(false)}
 						>
-							<button className='flex items-center ml-2 gap-2 hover:text-[#001c3a] py-2 transition-colors focus:outline-none'>
+							<button className={`flex items-center ml-2 gap-2 py-2 transition-colors focus:outline-none ${pathname.startsWith('/services') ? 'text-[#e2881c]' : 'hover:text-[#001c3a]'}`}>
 								Services
 								<svg className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180 text-[#e2881c]' : ''}`} fill='none' stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
@@ -95,8 +107,8 @@ export default function Header() {
 								<div>
 									<h4 className='text-xs px-2 py-1 rounded-sm bg-tertiary-fixed-dim font-bold uppercase tracking-widest text-black mb-2'>Web Engineering</h4>
 									<ul className="space-y-1.5 text-sm font-medium text-on-secondary-container">
-										<li><Link href="/services/web/ecommerce" className="hover:text-[#445d80] transition-colors block">E-Commerce Stores</Link></li>
-										<li><Link href="/services/web/corporate" className="hover:text-[#445d80] transition-colors block">Corporate Systems</Link></li>
+										<li><Link href="/services/websites/e-commerce" className="hover:text-[#445d80] transition-colors block">E-Commerce Stores</Link></li>
+										<li><Link href="/services/websites/corporate" className="hover:text-[#445d80] transition-colors block">Corporate Systems</Link></li>
 									</ul>
 								</div>
 								<div>
@@ -116,10 +128,11 @@ export default function Header() {
 							</div>
 						</div>
 
-						<Link href='/portfolio' className='hover:text-[#e2881c] transition-colors'>Portfolio</Link>
-						<Link href='/about' className='hover:text-[#e2881c] transition-colors'>About</Link>
-						<Link href='/bookstore' className='hover:text-[#e2881c] transition-colors'>Book Store</Link>
-						<Link href='/contact' className='hover:text-[#e2881c] transition-colors'>Contact</Link>
+						{/* Links evaluate structural style active checks dynamically below */}
+						<Link href='/portfolio' className={getLinkStyles('/portfolio')}>Portfolio</Link>
+						<Link href='/about' className={getLinkStyles('/about')}>About</Link>
+						<Link href='/bookstore' className={getLinkStyles('/bookstore')}>Book Store</Link>
+						<Link href='/contact' className={getLinkStyles('/contact')}>Contact</Link>
 					</nav>
 
 					{/* ACTIONS & HAMBURGER */}
@@ -160,12 +173,12 @@ export default function Header() {
 				mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
 			}`}>
 				<nav className="flex flex-col gap-4 font-bold text-base">
-					<Link href='/' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#e2881c]">Home</Link>
+					<Link href='/' onClick={() => setMobileMenuOpen(false)} className={getLinkStyles('/')}>Home</Link>
 
 					<div className="flex flex-col border-b border-[#6c757d]/10 pb-2">
 						<button
 							onClick={() => toggleMobileSection('services')}
-							className="flex items-center justify-between w-full text-left py-1 hover:text-[#e2881c]"
+							className={`flex items-center justify-between w-full text-left py-1 ${pathname.startsWith('/services') ? 'text-[#e2881c]' : 'hover:text-[#e2881c]'}`}
 						>
 							<span>Services</span>
 							<svg className={`w-4 h-4 transform transition-transform duration-200 ${activeMobileSection === 'services' ? 'rotate-180 text-[#e2881c]' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,19 +190,19 @@ export default function Header() {
 							<div className="pl-4 flex flex-col gap-3 font-medium text-sm text-on-secondary-container">
 								<div>
 									<p className="text-xs font-bold text-[#e2881c] uppercase tracking-wider mb-1">Publishing</p>
-									<Link href="/services/publishing/fiction/fiction" onClick={() => setMobileMenuOpen(false)} className="block py-1 pl-2">Fiction & Novels</Link>
+									<Link href="/services/publishing/fiction/fiction" onClick={() => setMobileMenuOpen(false)} className={`block py-1 pl-2 ${pathname === '/services/publishing/fiction/fiction' ? 'text-[#e2881c] font-bold' : ''}`}>Fiction & Novels</Link>
 								</div>
 								<div>
 									<p className="text-xs font-bold text-black uppercase tracking-wider mb-1">Web Engineering</p>
-									<Link href="/services/web/ecommerce" onClick={() => setMobileMenuOpen(false)} className="block py-1 pl-2">E-Commerce Stores</Link>
+									<Link href="/services/websites/e-commerce" onClick={() => setMobileMenuOpen(false)} className={`block py-1 pl-2 ${pathname === '/services/websites/e-commerce' ? 'text-[#e2881c] font-bold' : ''}`}>E-Commerce Stores</Link>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<Link href='/portfolio' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#e2881c]">Portfolio</Link>
-					<Link href='/bookstore' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#e2881c]">Book Store</Link>
-					<Link href='/contact' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#e2881c]">Contact</Link>
+					<Link href='/portfolio' onClick={() => setMobileMenuOpen(false)} className={getLinkStyles('/portfolio')}>Portfolio</Link>
+					<Link href='/bookstore' onClick={() => setMobileMenuOpen(false)} className={getLinkStyles('/bookstore')}>Book Store</Link>
+					<Link href='/contact' onClick={() => setMobileMenuOpen(false)} className={getLinkStyles('/contact')}>Contact</Link>
 					<Link href='/quote' onClick={() => setMobileMenuOpen(false)} className="block w-full text-center bg-[#e2881c] text-white font-bold py-3 rounded-xl shadow-md">
 						Get a Quote
 					</Link>

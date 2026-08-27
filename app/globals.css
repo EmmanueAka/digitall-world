@@ -121,7 +121,6 @@ body {
     0% { transform: translate(-100%, -100%) rotate(45deg); }
     100% { transform: translate(100%, 100%) rotate(45deg); }
 }
-
 .gradient-text {
     background: linear-gradient(to right, #a43c12, #ff7f50);
     -webkit-background-clip: text;

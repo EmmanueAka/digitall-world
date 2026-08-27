@@ -3,15 +3,15 @@ import Link from "next/link";
 
 const Footer = () => {
 	return (
-		<footer className='h-auto w-full bg-surface-container px-8 mt-24'>
+		<footer className='h-auto w-full border-t border-gray-400/50 bg-surface-container px-8 mt-24'>
 			<div className='grid grid-cols-2 md:grid-cols-4 mt-24 gap-4'>
 				<div className='mb-16'>
 					<div className=' rounded-full w-10 h-10 bg-black'>
 						<img src='/digitally-logo.png' className='object-contain'/>
 					</div>
-					<h1 className='text-2xl font-bold text-on-primary-fixed-variant'>DigitAll</h1>
+					<h1 className='text-2xl font-bold text-on-primary-fixed-variant'>DigitAll <span className='font-light'>World</span></h1>
 					<p className='mt-6 text-gray-500 text-sm'>
-						<span>&copy; 2022 Signs DigitAll Word. Precision in Execution, vision in strategy. </span>
+						<span>&copy; 2022 Signs DigitAll Word. <br />Precision in Execution, vision in strategy. </span>
 					</p>
 				</div>
 				<div className='space-y-2 flex flex-col justify-start text-sm text-gray-500'>

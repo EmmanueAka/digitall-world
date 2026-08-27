@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, Suspense } from "react";
+import React, {useRef, Suspense, useMemo} from "react";
 import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
-import { TextureLoader, Mesh } from "three";
+import { TextureLoader, Mesh, MeshStandardMaterial } from "three";
 
 interface AnimatedSphereProps {
 	isHovered: React.MutableRefObject<boolean>;
@@ -10,12 +10,19 @@ interface AnimatedSphereProps {
 
 function AnimatedSphere({ isHovered }: AnimatedSphereProps) {
 	const meshRef = useRef<Mesh>(null);
-
-	// 1. Next.js loads assets from the public folder.
-	// CRITICAL: Ensure your image file is exactly named "digital-logo.png" inside your /public directory!
-	const colorMap = useLoader(TextureLoader, "/digitally-logo.png");
-
+	const colorMap = useLoader(TextureLoader, '/digitally-logo.png')
 	const { viewport } = useThree()
+
+	const customMaterial = useMemo(() => {
+		return new MeshStandardMaterial({
+			map: colorMap,
+			transparent: true,
+			roughness: 0.2,
+			metalness: 0.1,
+			depthWrite: true
+		})
+	}, [colorMap]);
+
 
 	useFrame((state) => {
 		if (!meshRef.current) return;
@@ -35,13 +42,10 @@ function AnimatedSphere({ isHovered }: AnimatedSphereProps) {
 	const radius = Math.min(viewport.width, viewport.height) * 0.45;
 
 	return (
-		<mesh ref={meshRef} scale={[radius, radius, radius]}>
+		<mesh ref={meshRef} scale={[radius, radius, radius]}
+		      material={customMaterial}
+		>
 			<sphereGeometry args={[0.9, 32, 32]} />
-			<meshBasicMaterial
-				map={colorMap}
-				transparent={true}
-				alphaTest={0.05}
-			/>
 		</mesh>
 	);
 }
