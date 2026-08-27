@@ -5,7 +5,7 @@ import DesignMethodology from "@/app/services/websites/corporate/DesignMethodolo
 
 const Page = () => {
 	return (
-		<main>
+		<main className='text-black'>
 			<WebHero/>
 			<CoreEnterprise />
 			<DesignMethodology />

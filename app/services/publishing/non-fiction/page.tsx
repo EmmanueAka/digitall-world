@@ -6,7 +6,7 @@ import FeaturedNonFiction from "@/app/services/publishing/non-fiction/Featured-n
 
 const Page = () => {
 	return (
-		<main>
+		<main className='text-black'>
 			<Hero />
 			<GridBased />
 			<FeaturedNonFiction />

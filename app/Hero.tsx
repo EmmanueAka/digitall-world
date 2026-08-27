@@ -3,7 +3,7 @@ import InteractiveLogo from "@/components/InteractiveLogo";
 
 const Hero = () => {
 	return (
-		<section className='px-16 '>
+		<section className='px-16 text-black'>
 			<div className='h-24'>
 
 			</div>

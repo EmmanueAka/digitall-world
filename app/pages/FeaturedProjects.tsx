@@ -10,7 +10,7 @@ const FEATURED_CARDS = [
 
 const FeaturedProjects = () => {
 	return (
-		<section className='px-8 mt-16'>
+		<section className='px-8 mt-16 text-black'>
 			<div className='flex items-center justify-between'>
 				<h2 className='font-bold text-4xl'>Featured Projects</h2>
 				<span className='flex items-center justify-center gap-2 group'>

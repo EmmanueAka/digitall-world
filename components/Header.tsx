@@ -114,7 +114,7 @@ export default function Header({ onNavigationAction }: { onNavigationAction: () 
 								<div>
 									<h4 className='text-xs px-2 rounded-sm py-1 bg-on-surface-variant font-bold uppercase tracking-widest text-white mb-2'>Mobile App Design</h4>
 									<ul className="space-y-1.5 text-sm text-on-secondary-container font-medium">
-										<li><Link href="/services/mobile/native" className="hover:text-[#445d80] transition-colors block">Native iOS & Android</Link></li>
+										<li><Link href="/services/mobile-app/ios-android" className="hover:text-[#445d80] transition-colors block">Native iOS & Android</Link></li>
 										<li><Link href="/services/mobile/cross-platform" className="hover:text-[#445d80] transition-colors block">Cross-Platform UI</Link></li>
 									</ul>
 								</div>

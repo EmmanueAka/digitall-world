@@ -2,7 +2,7 @@ import React from 'react'
 
 const Testimonial = () => {
 	return (
-		<section className='h-auto px-8 w-full flex items-center justify-center'>
+		<section className='h-auto px-8 w-full flex items-center justify-center text-black'>
 			<div className='flex flex-col max-w-2xl items-center justify-center mt-12  mb-12 space-y-5'>
 				<span className='material-symbols-outlined text-seoncdary/30 text-[64px]'>format_quote</span>
 				<p className='text-center font-bold text-2xl'>

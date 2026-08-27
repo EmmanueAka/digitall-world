@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <head>
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     </head>
-      <body className="bg-[#e6eff8] min-h-screen overflow-x-hidden">
+      <body className="bg-[#e6eff8] min-h-screen overflow-x-hidden text-black">
       <Header />
       <div className='relative z-10 bg-[#e6eff8]  flex flex-col'>
         {children}

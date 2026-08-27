@@ -7,7 +7,7 @@ import StartProject from "@/app/services/websites/e-commerce/StartProject";
 
 const Page = () => {
 	return (
-		<main>
+		<main className='text-black'>
 			<Hero />
 			<DesignMethodology />
 			<CoreCapabilities />

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    /* Surface colors */
+    /* --- SURFACE COLORS --- */
     --color-surface: #f6faff;
     --color-surface-dim: #d2dbe4;
     --color-surface-bright: #f6faff;
@@ -11,14 +11,14 @@
     --color-inverse-surface: #293138;
     --color-inverse-on-surface: #e9f2fb;
 
-    /* Surface containers */
+    /* --- SURFACE CONTAINERS --- */
     --color-surface-container-lowest: #ffffff;
     --color-surface-container-low: #ecf5fe;
     --color-surface-container: #e6eff8;
     --color-surface-container-high: #e0e9f2;
     --color-surface-container-highest: #dbe4ed;
 
-    /* Brand / Primary */
+    /* --- BRAND / PRIMARY --- */
     --color-primary: #00658d;
     --color-on-primary: #ffffff;
     --color-primary-container: #00a8e8;
@@ -29,7 +29,7 @@
     --color-on-primary-fixed: #001e2d;
     --color-on-primary-fixed-variant: #004c6b;
 
-    /* Secondary */
+    /* --- SECONDARY --- */
     --color-secondary: #476083;
     --color-on-secondary: #ffffff;
     --color-secondary-container: #bdd6ff;
@@ -39,7 +39,7 @@
     --color-on-secondary-fixed: #001c3a;
     --color-on-secondary-fixed-variant: #2f486a;
 
-    /* Tertiary */
+    /* --- TERTIARY --- */
     --color-tertiary: #8c5000;
     --color-on-tertiary: #ffffff;
     --color-tertiary-container: #e2881c;
@@ -49,41 +49,74 @@
     --color-on-tertiary-fixed: #2d1600;
     --color-on-tertiary-fixed-variant: #6a3b00;
 
-    /* Error states */
+    /* --- ERROR STATES --- */
     --color-error: #ba1a1a;
     --color-on-error: #ffffff;
     --color-error-container: #ffdad6;
     --color-on-error-container: #93000a;
 
-    /* Layout / Background / Outlines */
+    /* --- LAYOUT / UTILITIES --- */
     --color-background: #f6faff;
     --color-on-background: #141d23;
     --color-outline: #6e7881;
     --color-outline-variant: #bdc8d1;
     --color-surface-tint: #00658d;
 
-    /* Keep your custom project fonts if needed */
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    /* --- FIXED: TAILWIND V4 CUSTOM SPACING CONFIGURATION --- */
+    --spacing-stack-sm: 8px;
+    --spacing-margin-mobile: 24px;
+    --spacing-section-gap: 120px;
+    --spacing-stack-lg: 32px;
+    --spacing-unit: 8px;
+    --spacing-gutter: 32px;
+    --spacing-stack-md: 16px;
+    --spacing-container-max: 1280px;
+    --spacing-margin-desktop: 64px;
+
+    /* --- FIXED: TAILWIND V4 CUSTOM FONT FAMILY CONFIGURATION --- */
+    --font-sans: "Inter", var(--font-geist-sans), sans-serif;
+    --font-mono: var(--font-geist-mono), monospace;
+    --font-label-md: "Inter", sans-serif;
+    --font-caption: "Inter", sans-serif;
+    --font-body-md: "Inter", sans-serif;
+    --font-display-lg: "Inter", sans-serif;
+    --font-headline-xl: "Inter", sans-serif;
+    --font-headline-md: "Inter", sans-serif;
+    --font-body-lg: "Inter", sans-serif;
+    --font-headline-lg: "Inter", sans-serif;
+    --font-display-lg-mobile: "Inter", sans-serif;
+
+    /* --- FIXED: TAILWIND V4 CUSTOM FONT SIZE CONFIGURATION --- */
+    --text-label-md: 14px;
+    --text-caption: 12px;
+    --text-body-md: 16px;
+    --text-display-lg: 64px;
+    --text-headline-xl: 40px;
+    --text-headline-md: 24px;
+    --text-body-lg: 18px;
+    --text-headline-lg: 32px;
+    --text-display-lg-mobile: 40px;
 }
+
+/* --- THEME CSS VARIABLE CONFIGURATIONS --- */
 :root {
     --background: #f6faff;
-    --foreground: #141d23; /* Updated to match your token "on-background" */
+    --foreground: #141d23;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #f1f1f1; /* Inverted logic using your config variables */
-        --foreground: #141d23;
+        --background: #141d23; /* FIXED: Corrected dark mode logic to be dark */
+        --foreground: #f6faff;
     }
 }
 
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* --- UTILITY GLASS PANELS & REUSABLE STYLES --- */
 .glass-panel {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(20px);
@@ -121,8 +154,30 @@ body {
     0% { transform: translate(-100%, -100%) rotate(45deg); }
     100% { transform: translate(100%, 100%) rotate(45deg); }
 }
+
 .gradient-text {
     background: linear-gradient(to right, #a43c12, #ff7f50);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, var(--color-surface-container-low) 0%, var(--color-background) 100%);
+}
+
+.mesh-bg {
+    background-image: radial-gradient(at 40% 20%, hsla(200,100%,74%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(200,100%,56%,0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(200,100%,46%,0.05) 0px, transparent 50%);
+}
+
+.store-badge {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+    transition: opacity 0.2s;
+}
+
+.store-badge:hover {
+    opacity: 0.8;
 }

@@ -8,7 +8,7 @@ import ReadyArchitect from "@/app/services/publishing/fiction/ReadyArchitect";
 
 const Page = () => {
 	return (
-		<main className=''>
+		<main className='text-black'>
 			<FictionHero />
 			<NarrativeLayout />
 			<ConceptualCover />

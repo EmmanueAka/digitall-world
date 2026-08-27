@@ -9,7 +9,7 @@ interface CardProps {
 }
 const OurApproach = () => {
 	return (
-		<section className='mt-16 bg-surface-container h-auto border-2 border-outline/30'>
+		<section className='mt-16 bg-surface-container h-auto border-2 border-outline/30 text-black'>
 			<div></div>
 			<div className='flex flex-col items-center justify-center mt-16 max-w-3xl mx-auto px-8'>
 				<h2 className='text-4xl font-bold'>Our Approach</h2>
