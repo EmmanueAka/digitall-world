@@ -1,10 +1,10 @@
 import React from 'react'
-import Contents from "@/app/portfolio/Contents";
+import ProductPage from "@/app/services/branding/ui-ux/ProductPage";
 
 const Page = () => {
 	return (
 		<main>
-			<Contents />
+			<ProductPage/>
 		</main>
 	)
 }

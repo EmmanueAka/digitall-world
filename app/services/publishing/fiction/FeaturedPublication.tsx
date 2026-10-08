@@ -2,9 +2,9 @@ import React from 'react'
 import Link from "next/link";
 
 const FEATURED_CARD = [
-	{img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLBHMJ1XUYmF4PKB0uFf36-DMbXTPA80yQYDZrMskTdaoJSWO9WCS832DcRP7rjBc6DP5qa0peun4Q9CR9yun5XE3Fk4eFBceA0lfghnMAPirMet_5u5CJgGEFBkckQk1jgFeqYMwjocZg6LAVy2p56OAriI8KkU41iwQcBzhPph1WDK1-Vz0xLh0Y3xKWkOHzHsfC5RKsi4Ghv6jI-bBtBpl-zIB7kIL2ZKd_wYuOuo1d31EWubuVEg", title: "The Silent Architect", sub: "Thriller / Print & Digital"},
-	{img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBDCNt59WWMkVXpI9YF07vqaTAppNbPLVNBme3Z3FgSU8GZmi86AgqTEHrAaHYz7tPabFhsktY95mKLbLInPK3mZEMdjzMLWJSM1FGOAhUPH4nGEw5KbylVhv7OOYksY0aMKmBS-F8Q9XBb5eK5buUwhGc23ZIAZ2L6dex_CsMeirWAatnPrc_pD2Ql4o_QIGkMfDNdXFfeO9N91WW3ULRLDAy0AmGNaDVAjHXz6wjUb6MpW8ZOaXpPkg", title: "Echoes in Code", sub: "Sci-Fi / EPUB Optimization"},
-	{img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAg27aLulNpO66Y-2oGdOaXMhXP9G87wU1RkGiXhPTaO8ggT43NTxKN5j42lINIWlgAspLudhEVnR6jwi9tvvdRNt6pjgbKawIXwv8TLph8-NWkyT6tREp4c59NddduSSyAl3znB_mSNQwRAvIrhZCM5F3sB8N_QdDfM3j5G_btEZYqxK79knNYgx6XEppc3l_DgZ5V1dWE6reL2--1XIi7dvPcjCe7BGC97hnHz20b6-yfIC4AjnHuQQ", title: "Structural Integrity", sub: "Literary Fiction / Cover Design"},
+	{img: "/book3.jpg", title: "The Silent Architect", sub: "Thriller / Print & Digital"},
+	{img: "/book2.jpg", title: "Echoes in Code", sub: "Sci-Fi / EPUB Optimization"},
+	{img: "/book1.jpg", title: "Structural Integrity", sub: "Literary Fiction / Cover Design"},
 ]
 const FeaturedPublication = () => {
 	return (

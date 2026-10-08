@@ -1,10 +1,10 @@
 import React from 'react'
-import Contents from "@/app/portfolio/Contents";
+import InsidePage from "@/app/bookstore/InsidePage";
 
 const Page = () => {
 	return (
 		<main>
-			<Contents />
+			<InsidePage />
 		</main>
 	)
 }

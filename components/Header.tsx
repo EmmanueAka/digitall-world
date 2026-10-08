@@ -115,14 +115,14 @@ export default function Header({ onNavigationAction }: { onNavigationAction: () 
 									<h4 className='text-xs px-2 rounded-sm py-1 bg-on-surface-variant font-bold uppercase tracking-widest text-white mb-2'>Mobile App Design</h4>
 									<ul className="space-y-1.5 text-sm text-on-secondary-container font-medium">
 										<li><Link href="/services/mobile-app/ios-android" className="hover:text-[#445d80] transition-colors block">Native iOS & Android</Link></li>
-										<li><Link href="/services/mobile/cross-platform" className="hover:text-[#445d80] transition-colors block">Cross-Platform UI</Link></li>
+										<li><Link href="/services/mobile-app/cross-platform" className="hover:text-[#445d80] transition-colors block">Cross-Platform UI</Link></li>
 									</ul>
 								</div>
 								<div>
 									<h4 className='text-xs px-2 py-1 rounded-sm bg-inverse-on-surface font-bold uppercase tracking-widest text-black mb-2'>Graphics Design</h4>
 									<ul className="space-y-1.5 text-sm text-on-secondary-container font-medium">
-										<li><Link href="/services/graphics/branding" className="hover:text-[#445d80] transition-colors block">Branding & Logo Assets</Link></li>
-										<li><Link href="/services/graphics/uiux" className="hover:text-[#445d80] transition-colors block">UI/UX Graphic Deliverables</Link></li>
+										<li><Link href="/services/branding/branding-logo" className="hover:text-[#445d80] transition-colors block">Branding & Logo Assets</Link></li>
+										<li><Link href="/services/branding/ui-ux" className="hover:text-[#445d80] transition-colors block">UI/UX Graphic Deliverables</Link></li>
 									</ul>
 								</div>
 							</div>
@@ -190,7 +190,7 @@ export default function Header({ onNavigationAction }: { onNavigationAction: () 
 							<div className="pl-4 flex flex-col gap-3 font-medium text-sm text-on-secondary-container">
 								<div>
 									<p className="text-xs font-bold text-[#e2881c] uppercase tracking-wider mb-1">Publishing</p>
-									<Link href="/services/publishing/fiction/fiction" onClick={() => setMobileMenuOpen(false)} className={`block py-1 pl-2 ${pathname === '/services/publishing/fiction/fiction' ? 'text-[#e2881c] font-bold' : ''}`}>Fiction & Novels</Link>
+									<Link href="/services/publishing/fiction" onClick={() => setMobileMenuOpen(false)} className={`block py-1 pl-2 ${pathname === '/services/publishing/fiction/fiction' ? 'text-[#e2881c] font-bold' : ''}`}>Fiction & Novels</Link>
 								</div>
 								<div>
 									<p className="text-xs font-bold text-black uppercase tracking-wider mb-1">Web Engineering</p>
