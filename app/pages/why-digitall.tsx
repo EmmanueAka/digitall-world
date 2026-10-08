@@ -28,7 +28,7 @@ const WhyDigitall = () => {
 								</svg>
 								}
 								<h3 className='font-black text-lg'>{card.title}</h3>
-								<p className='text-gray-600'>{card.Desc}</p>
+								<p className='text-gray-600'>{card.desc}</p>
 							</div>
 						)
 					})}

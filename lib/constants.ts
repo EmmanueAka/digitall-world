@@ -36,10 +36,10 @@ export const CARD_APPROACH = [
 ]
 
 export const WHY_CARD = [
-	{icon: DraftingCompassIcon, title: "Architectural Precision", Desc: "Every component, grid, and typography scale is mathematically aligned for structural integrity."},
-	{icon: Network, title: "Scalable Systems", Desc: "Built on modular foundations that allow your digital presence to grow without technical debt."},
-	{icon: EyeIcon, title: "Strategic Vision", Desc: "Design that serves business objectives, driving conversion through clarity and user-centric logic."},
-	{icon: ShieldIcon, title: "Enterprise Reliability", Desc: "Rigorous testing and robust infrastructure ensuring your platforms perform flawlessly under pressure."}
+	{icon: DraftingCompassIcon, title: "Architectural Precision", desc: "Every component, grid, and typography scale is mathematically aligned for structural integrity."},
+	{icon: Network, title: "Scalable Systems", desc: "Built on modular foundations that allow your digital presence to grow without technical debt."},
+	{icon: EyeIcon, title: "Strategic Vision", desc: "Design that serves business objectives, driving conversion through clarity and user-centric logic."},
+	{icon: ShieldIcon, title: "Enterprise Reliability", desc: "Rigorous testing and robust infrastructure ensuring your platforms perform flawlessly under pressure."}
 ]
 
 export const ENTERPRISE_CARD = [
