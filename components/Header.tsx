@@ -5,7 +5,7 @@ import Link from "next/link";
 import InteractiveLogo from "@/components/InteractiveLogo";
 import { usePathname } from "next/navigation";
 
-export default function Header({ onNavigationAction }: { onNavigationAction?: () => void }) {
+export default function Header() {
 	const [dropdownOpen, setDropdownOpen] = useState<boolean>(false)
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
 	const [activeMobileSection, setActiveMobileSection] = useState<string | null>(null)
@@ -82,7 +82,7 @@ export default function Header({ onNavigationAction }: { onNavigationAction?: ()
 						</div>
 					</div>
 					{/* DESKTOP NAVIGATION */}
-					<nav onClick={() => onNavigationAction?.()} className="hidden md:flex items-center gap-8 font-bold flex-row text-sm text-black">
+					<nav className="hidden md:flex items-center gap-8 font-bold flex-row text-sm text-black">
 						<div className='relative'
 						     onMouseEnter={() => setDropdownOpen(true)}
 						     onMouseLeave={() => setDropdownOpen(false)}
